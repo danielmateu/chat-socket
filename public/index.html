@@ -10,24 +10,31 @@
 
 <body class='container'>
     
-    <div class="row mt-4">
+    <div class="row mt-5">
+        <div class="col-sm-6">
 
-        <h1>Google Sign-in</h1>
-    
-        <hr>
-    
-        <div id="g_id_onload" data-client_id="656642856165-pf5bjna1nj68ahofeb9k7hn7488hrff8.apps.googleusercontent.com"
-            data-auto_prompt="false" data-callback="handleCredentialResponse"></div>
-        <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with"
-            data-shape="rectangular" data-logo_alignment="left">
+            <h1>Google Sign-in</h1>
+        
+            <hr>
+        
+            <div id="g_id_onload" data-client_id="656642856165-pf5bjna1nj68ahofeb9k7hn7488hrff8.apps.googleusercontent.com"
+                data-auto_prompt="false" data-callback="handleCredentialResponse"></div>
+            <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with"
+                data-shape="rectangular" data-logo_alignment="left">
+            </div>
+        
+            <button id="google-signout" class="btn btn-primary mt-2">
+                Signout
+            </button>
+            <br>
+        
         </div>
-    
-        <br>
-    
+
+        <div class="col-sm-6">
+
+        </div>
+
     </div>
-    <button id="google-signout" class="btn btn-primary mt-2">
-        Signout
-    </button>
 
 
 
