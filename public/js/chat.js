@@ -1,3 +1,5 @@
+
+
 const url = (window.location.hostname.includes('localhost'))
             ? 'http://localhost:8080/api/auth/'
             : 'https://restserver-node-dmp.herokuapp.com/api/auth/';
@@ -56,8 +58,9 @@ const conectarSocket = async() => {
         //TODO
     })
 
-    socket.on('usuarios-activos', () => {
+    socket.on('usuarios-activos', (payload) => {
         //TODO
+        console.log(payload);
     })
 
     socket.on('mensaje-privado', () => {
