@@ -1,3 +1,5 @@
+
+
 const miFormulario = document.querySelector('form');
 
 const url = (window.location.hostname.includes('localhost'))
@@ -6,7 +8,6 @@ const url = (window.location.hostname.includes('localhost'))
 
 miFormulario.addEventListener('submit', ev => {
     ev.preventDefault();
-
     const formData = {};
 
     for( let el of miFormulario.elements ){
@@ -19,18 +20,16 @@ miFormulario.addEventListener('submit', ev => {
     fetch(url + 'login', {
         method: 'POST',
         body: JSON.stringify(formData),
-        headers: {'Content-Type': 'application/json'}
+        headers: { 'Content-Type': 'application/json' }
     })
     .then(resp => resp.json())
-    .then(data => {
-        console.log(data);
-    })
-    .then(({mgg, token}) => {
+    .then(({msg, token}) => {
         if(msg){
             return console.error(msg);
         }
 
         localStorage.setItem('token',token);
+        window.location = 'chat.html';
     })
     .catch(err => {
         console.log(err);
@@ -53,6 +52,7 @@ function handleCredentialResponse(response) {
         .then( resp => resp.json())
         .then(({token}) => {
             localStorage.setItem('token',token);
+            window.location = 'chat.html';
     })
         .catch(console.warn)
 
